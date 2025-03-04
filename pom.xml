@@ -12,7 +12,28 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+        <lower-number>100</lower-number>
+        <upper-number>200</upper-number>
+
+        <junit.version>5.8.1</junit.version>
+        <hamcrest.version>2.2</hamcrest.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>${hamcrest.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
 
     <build>
         <plugins>
@@ -29,8 +50,11 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.challenge.LongestPalindromicFinderApplication</mainClass>
-                    <arguments>100 200</arguments>
+                    <mainClass>com.challenge.LargestPalindromicFinderApplication</mainClass>
+                    <arguments>
+                        <argument>${lower-number}</argument>
+                        <argument>${upper-number}</argument>
+                    </arguments>
                 </configuration>
             </plugin>
 
@@ -41,7 +65,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.challenge.LongestPalindromicFinderApplication</mainClass>
+                            <mainClass>com.challenge.LargestPalindromicFinderApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
