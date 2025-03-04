@@ -50,7 +50,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <mainClass>com.challenge.LongestPalindromicFinderApplication</mainClass>
+                    <mainClass>com.challenge.LargestPalindromicFinderApplication</mainClass>
                     <arguments>
                         <argument>${lower-number}</argument>
                         <argument>${upper-number}</argument>
@@ -65,7 +65,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.challenge.LongestPalindromicFinderApplication</mainClass>
+                            <mainClass>com.challenge.LargestPalindromicFinderApplication</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

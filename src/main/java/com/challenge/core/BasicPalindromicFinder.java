@@ -1,9 +1,9 @@
 package com.challenge.core;
 
-public class BasicPalindromicFinder implements LongestPalindromicFinder {
+public class BasicPalindromicFinder implements LargestPalindromicFinder {
 
     @Override
-    public int findLongestPalindrome(int number1, int number2) {
+    public int findLargestPalindrome(int number1, int number2) {
         int minimum = Math.min(number1, number2);
         int maximum = Math.max(number1, number2);
         for (int number = maximum; number >= minimum; number--) {
@@ -14,6 +14,12 @@ public class BasicPalindromicFinder implements LongestPalindromicFinder {
         return -1;
     }
 
+    /**
+     * Check if number, after converting it to String, is a palindrome.
+     *
+     * @param number to check
+     * @return true if palindrome, false otherwise.
+     */
     private boolean isPalindrome(int number) {
         String numberString = String.valueOf(number);
         int left = 0;
