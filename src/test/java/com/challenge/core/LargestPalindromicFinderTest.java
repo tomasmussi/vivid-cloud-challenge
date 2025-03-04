@@ -71,8 +71,10 @@ public class LargestPalindromicFinderTest {
             "1221,1111",
             "150,141",
             "18923,18881",
+            "12345,12321",
+            "54321,54245",
     })
-    public void test(int upperBound, int expected) {
+    public void whenUpperBoundIsSet_ThenResultIsAsExpected(int upperBound, int expected) {
         for (LargestPalindromicFinder finder : finders) {
             int result = finder.findLargestPalindrome(0, upperBound);
             assertThat(finder.getClass() + " returned error", result, is(expected));
