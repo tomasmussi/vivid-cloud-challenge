@@ -1,5 +1,8 @@
 package com.challenge.core;
 
+import com.challenge.core.finder.BasicPalindromicFinder;
+import com.challenge.core.finder.ImprovedPalindromicFinder;
+import com.challenge.core.finder.LargestPalindromicFinder;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,7 +24,7 @@ public class LargestPalindromicFinderTest {
         FINDERS = new ArrayList<>();
         FINDERS.add(new BasicPalindromicFinder());
         // uncomment when this works
-//        FINDERS.add(new ImprovedPalindromicFinder());
+        FINDERS.add(new ImprovedPalindromicFinder());
     }
 
     @Test
@@ -79,6 +82,8 @@ public class LargestPalindromicFinderTest {
             "100,99",
             "7537,7447",
             "75001,74947",
+            "11105,11011",
+            "11001,10901",
     })
     public void whenUpperBoundIsSet_ThenResultIsAsExpected(int upperBound, int expected) {
         for (LargestPalindromicFinder finder : FINDERS) {

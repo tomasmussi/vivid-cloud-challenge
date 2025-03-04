@@ -15,6 +15,8 @@
 
         <lower-number>100</lower-number>
         <upper-number>200</upper-number>
+        <!-- -b is basic, -i is improved -->
+        <finder.implementation>-i</finder.implementation>
 
         <junit.version>5.8.1</junit.version>
         <hamcrest.version>2.2</hamcrest.version>
@@ -54,6 +56,7 @@
                     <arguments>
                         <argument>${lower-number}</argument>
                         <argument>${upper-number}</argument>
+                        <argument>${finder.implementation}</argument>
                     </arguments>
                 </configuration>
             </plugin>
