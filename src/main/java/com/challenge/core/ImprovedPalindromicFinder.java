@@ -46,12 +46,22 @@ public class ImprovedPalindromicFinder implements LargestPalindromicFinder {
             } else if (number[left] > number[right]) {
                 isLeftReduced = true;
                 // left number is greater, will need to reduce a digit from the next position at right
-                int position = right - 1;
-                while (position >= 0 && number[position] == '0') {
-                    number[position--] = '9';
+                int position = right;
+                if (number[left] - 1 == number[right]) {
+                    number[left] = number[right];
+                } else {
+                    while (position >= 0) {
+                        if (number[position] == '0') {
+                            number[position] = '9';
+                            position--;
+                        } else {
+                            number[position]--;
+                            break;
+                        }
+                    }
                 }
                 // copy from left, since it may have changed
-                number[right - 1] = number[left];
+                number[right] = number[left];
                 left++;
                 right--;
             } else {
@@ -61,6 +71,7 @@ public class ImprovedPalindromicFinder implements LargestPalindromicFinder {
                 right--;
             }
         }
-        return 0;
+        int result = Integer.parseInt(String.valueOf(number));
+        return result > lowerBound ? result : -1;
     }
 }
