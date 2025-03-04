@@ -18,6 +18,6 @@ public class LongestPalindromicFinderApplication {
         int number1 = Integer.parseInt(args[0]);
         int number2 = Integer.parseInt(args[1]);
         int result = finder.findLongestPalindrome(number1, number2);
-        System.out.println(String.format("The longest palindrome is in the range %s and %s is: %s", number1, number2, result));
+        System.out.printf("The longest palindrome is in the range %s and %s is: %s%n", number1, number2, result);
     }
 }
