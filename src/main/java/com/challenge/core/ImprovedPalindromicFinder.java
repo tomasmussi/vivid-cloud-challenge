@@ -29,22 +29,12 @@ public class ImprovedPalindromicFinder implements LargestPalindromicFinder {
         char[] number = String.valueOf(upperBound).toCharArray();
         int left = 0;
         int right = number.length - 1;
-        boolean isLeftReduced = false;
         while (left <= right) {
-            if (left == right) {
-                // right at the middle, set the middle at the highest possible value,
-                // if the digits at left have been modified
-                if (isLeftReduced) {
-                    // since the number has been reduced in some digit, we can set this to the maximum digit
-                    number[left] = '9';
-                }
-            }
             if (number[left] == number[right]) {
                 // great, these are equal, move to next char
                 left++;
                 right--;
             } else if (number[left] > number[right]) {
-                isLeftReduced = true;
                 // left number is greater, will need to reduce a digit from the next position at right
                 // reduce the problem to one of the other options
                 int position = right;
