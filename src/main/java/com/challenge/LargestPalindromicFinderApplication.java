@@ -7,10 +7,6 @@ public class LargestPalindromicFinderApplication {
 
     public static void main(String[] args) {
         LargestPalindromicFinder finder = new BasicPalindromicFinder();
-        System.out.println(args.length);
-        for (String s : args) {
-            System.out.println(s);
-        }
         if (args.length != 2) {
             System.out.println("Usage: LargestPalindromicFinderApplication <number1> <number2>");
             return;
