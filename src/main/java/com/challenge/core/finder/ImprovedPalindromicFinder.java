@@ -7,11 +7,7 @@ import static com.challenge.core.Utils.isPalindrome;
  */
 public class ImprovedPalindromicFinder implements LargestPalindromicFinder {
 
-    private LargestPalindromicFinder finder;
-
-    public ImprovedPalindromicFinder() {
-        this.finder = new BasicPalindromicFinder();
-    }
+    private static final String STRATEGY_NAME = "ImprovedPalindromicFinder";
 
     @Override
     public int findLargestPalindrome(int number1, int number2) {
@@ -56,5 +52,10 @@ public class ImprovedPalindromicFinder implements LargestPalindromicFinder {
         }
         int result = Integer.parseInt(String.valueOf(number));
         return result > lowerBound ? result : -1;
+    }
+
+    @Override
+    public String strategyName() {
+        return STRATEGY_NAME;
     }
 }
