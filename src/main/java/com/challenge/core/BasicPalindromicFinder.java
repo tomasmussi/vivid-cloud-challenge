@@ -6,7 +6,7 @@ public class BasicPalindromicFinder implements LargestPalindromicFinder {
     public int findLargestPalindrome(int number1, int number2) {
         int minimum = Math.min(number1, number2);
         int maximum = Math.max(number1, number2);
-        for (int number = maximum; number >= minimum; number--) {
+        for (int number = maximum - 1; number > minimum; number--) {
             if (isPalindrome(number)) {
                 return number;
             }
