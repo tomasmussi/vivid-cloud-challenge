@@ -1,6 +1,6 @@
 package com.challenge.core;
 
-import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
@@ -14,18 +14,18 @@ import static org.hamcrest.Matchers.not;
 
 public class LargestPalindromicFinderTest {
 
-    private List<LargestPalindromicFinder> finders;
+    private static List<LargestPalindromicFinder> FINDERS;
 
-    @BeforeEach
-    public void setup() {
-        finders = new ArrayList<>();
-        finders.add(new BasicPalindromicFinder());
-        finders.add(new ImprovedPalindromicFinder());
+    @BeforeAll
+    public static void setup() {
+        FINDERS = new ArrayList<>();
+        FINDERS.add(new BasicPalindromicFinder());
+        FINDERS.add(new ImprovedPalindromicFinder());
     }
 
     @Test
     public void whenNumberInRange_ItReturnsLargestPalindromic() {
-        for (LargestPalindromicFinder finder : finders) {
+        for (LargestPalindromicFinder finder : FINDERS) {
             int result = finder.findLargestPalindrome(100, 200);
             assertThat(finder.getClass() + " returned error", result, is(191));
         }
@@ -33,7 +33,7 @@ public class LargestPalindromicFinderTest {
 
     @Test
     public void whenNumberBoundsAreReversed_ItReturnsLargestPalindromic() {
-        for (LargestPalindromicFinder finder : finders) {
+        for (LargestPalindromicFinder finder : FINDERS) {
             int result = finder.findLargestPalindrome(200, 100);
             assertThat(finder.getClass() + " returned error", result, is(191));
         }
@@ -41,7 +41,7 @@ public class LargestPalindromicFinderTest {
 
     @Test
     public void whenNoResult_ThenReturnMinusOne() {
-        for (LargestPalindromicFinder finder : finders) {
+        for (LargestPalindromicFinder finder : FINDERS) {
             int result = finder.findLargestPalindrome(103, 104);
             assertThat(finder.getClass() + " returned error", result, is(-1));
         }
@@ -49,7 +49,7 @@ public class LargestPalindromicFinderTest {
 
     @Test
     public void whenPalindromeIsBound_ThenItReturnsLowerPalindrome() {
-        for (LargestPalindromicFinder finder : finders) {
+        for (LargestPalindromicFinder finder : FINDERS) {
             int upperPalindrome = 191;
             int result = finder.findLargestPalindrome(100, upperPalindrome);
             assertThat(finder.getClass() + " returned error", result, not(is(upperPalindrome)));
@@ -59,7 +59,7 @@ public class LargestPalindromicFinderTest {
 
     @Test
     public void whenRangeIsEmpty_ThenReturnMinusOne() {
-        for (LargestPalindromicFinder finder : finders) {
+        for (LargestPalindromicFinder finder : FINDERS) {
             int result = finder.findLargestPalindrome(14, 14);
             assertThat(finder.getClass() + " returned error", result, is(-1));
         }
@@ -75,7 +75,7 @@ public class LargestPalindromicFinderTest {
             "54321,54245",
     })
     public void whenUpperBoundIsSet_ThenResultIsAsExpected(int upperBound, int expected) {
-        for (LargestPalindromicFinder finder : finders) {
+        for (LargestPalindromicFinder finder : FINDERS) {
             int result = finder.findLargestPalindrome(0, upperBound);
             assertThat(finder.getClass() + " returned error", result, is(expected));
         }
