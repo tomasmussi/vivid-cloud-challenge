@@ -79,6 +79,8 @@ public class LargestPalindromicFinderTest {
             "100,99",
             "7537,7447",
             "75001,74947",
+            "11105,11011",
+            "11001,10901",
     })
     public void whenUpperBoundIsSet_ThenResultIsAsExpected(int upperBound, int expected) {
         for (LargestPalindromicFinder finder : FINDERS) {
