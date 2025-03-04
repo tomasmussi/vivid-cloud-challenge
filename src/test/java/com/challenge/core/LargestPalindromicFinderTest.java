@@ -1,5 +1,8 @@
 package com.challenge.core;
 
+import com.challenge.core.finder.BasicPalindromicFinder;
+import com.challenge.core.finder.ImprovedPalindromicFinder;
+import com.challenge.core.finder.LargestPalindromicFinder;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;

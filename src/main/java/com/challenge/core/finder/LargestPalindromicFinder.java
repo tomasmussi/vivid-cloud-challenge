@@ -1,4 +1,4 @@
-package com.challenge.core;
+package com.challenge.core.finder;
 
 public interface LargestPalindromicFinder {
 

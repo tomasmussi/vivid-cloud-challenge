@@ -1,4 +1,4 @@
-package com.challenge.core;
+package com.challenge.core.finder;
 
 import static com.challenge.core.Utils.isPalindrome;
 
