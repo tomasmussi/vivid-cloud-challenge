@@ -21,7 +21,7 @@ public class LargestPalindromicFinderTest {
         FINDERS = new ArrayList<>();
         FINDERS.add(new BasicPalindromicFinder());
         // uncomment when this works
-//        FINDERS.add(new ImprovedPalindromicFinder());
+        FINDERS.add(new ImprovedPalindromicFinder());
     }
 
     @Test

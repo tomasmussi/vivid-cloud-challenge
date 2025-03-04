@@ -46,24 +46,17 @@ public class ImprovedPalindromicFinder implements LargestPalindromicFinder {
             } else if (number[left] > number[right]) {
                 isLeftReduced = true;
                 // left number is greater, will need to reduce a digit from the next position at right
+                // reduce the problem to one of the other options
                 int position = right;
-                if (number[left] - 1 == number[right]) {
-                    number[left] = number[right];
-                } else {
-                    while (position >= 0) {
-                        if (number[position] == '0') {
-                            number[position] = '9';
-                            position--;
-                        } else {
-                            number[position]--;
-                            break;
-                        }
+                while (position >= left) {
+                    if (number[position] == '0') {
+                        number[position] = '9';
+                        position--;
+                    } else {
+                        number[position]--;
+                        break;
                     }
                 }
-                // copy from left, since it may have changed
-                number[right] = number[left];
-                left++;
-                right--;
             } else {
                 // left number is lower, we can set the right number
                 number[right] = number[left];
