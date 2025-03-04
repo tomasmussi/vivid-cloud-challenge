@@ -1,16 +1,13 @@
 package com.challenge;
 
 import com.challenge.core.BasicPalindromicFinder;
+import com.challenge.core.ImprovedPalindromicFinder;
 import com.challenge.core.LargestPalindromicFinder;
 
 public class LargestPalindromicFinderApplication {
 
     public static void main(String[] args) {
-        LargestPalindromicFinder finder = new BasicPalindromicFinder();
-        System.out.println(args.length);
-        for (String s : args) {
-            System.out.println(s);
-        }
+        LargestPalindromicFinder finder = new ImprovedPalindromicFinder();
         if (args.length != 2) {
             System.out.println("Usage: LargestPalindromicFinderApplication <number1> <number2>");
             return;
