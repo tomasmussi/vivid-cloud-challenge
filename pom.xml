@@ -13,6 +13,9 @@
         <maven.compiler.target>17</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
+        <lower-number>100</lower-number>
+        <upper-number>200</upper-number>
+
         <junit.version>5.8.1</junit.version>
         <hamcrest.version>2.2</hamcrest.version>
     </properties>
@@ -48,7 +51,10 @@
                 </executions>
                 <configuration>
                     <mainClass>com.challenge.LongestPalindromicFinderApplication</mainClass>
-                    <arguments>100 200</arguments>
+                    <arguments>
+                        <argument>${lower-number}</argument>
+                        <argument>${upper-number}</argument>
+                    </arguments>
                 </configuration>
             </plugin>
 
